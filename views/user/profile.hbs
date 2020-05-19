@@ -1,0 +1,46 @@
+{{#if prod.length}}
+	{{#each prod}}
+		<div class="card mt-4">
+		  <div class="card-header">
+			<span class="float-left">Date:- {{this.[0].date}} </span>
+			<span class="float-right">Total:- ₹{{this.[0].price}} </span>
+		  </div>
+		  {{# if this.length}}
+		  <div class="card-body">
+		  		<div class ="row">
+		  			<div class="col float-left mw-25 mh-25 col-sm-6 col-md-4">
+		  				
+		  			</div>
+		  			<div class="col-sm-6 col-md-4 float-right">
+						<span class="float mx-auto d-block mt-4"><h7 class="card-title ">Name</h5></span>
+					</div>
+					<div class="col-sm-6 col-md-4 float-right">
+						<span class="float mx-auto d-block mt-4"><h7 class="card-title ">Quantity</h5></span>
+					</div>
+				</div>
+		  	{{#each this }}
+		  		<div class ="row mt-4">
+		  			<div class="col float-left mw-25 mh-25 col-sm-6 col-md-4">
+		  				<img src = "{{this.img}}" class="img-fluid img-thumbnail mx-auto d-block" style = "max-width : 70px">
+		  			</div>
+		  			<div class="col-sm-6 col-md-4 float-right">
+						<span class="float mx-auto d-block mt-4"><h5 class="card-title ">{{this.name}}</h5></span>
+					</div>
+					<div class="col-sm-6 col-md-4 float-right">
+						<span class="float mx-auto d-block mt-4"><h5 class="card-title ">{{this.quan}}</h5></span>
+					</div>
+				</div>
+			{{/each}}
+		  </div>
+		  {{else}}
+		  		<h5 class="card-title ">No items in shopping cart</h5>
+		  {{/if}}
+		</div>
+	{{/each}}
+{{else}}
+	<div class="card mt-4">
+		  <div class="card-header">
+			<div class="mx-auto">No previous orders to show</div>
+		  </div>
+	</div>
+{{/if}}

@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header">
+    Shopping cart
+  </div>
+  {{# if prod.length}}
+  <div class="card-body">
+  	{{#each prod }}
+  		<div class ="row mt-4">
+  			<div class="col float mw-25 mh-25 col-sm-6 col-md-4">
+  				<img src = "{{this.img}}" class="img-fluid img-thumbnail mx-auto d-block" style = "max-width : 150px">
+  			</div>
+  			<div class="col-sm-6 col-md-4 float-right">
+				<span class="float mx-auto d-block mt-4"><h5 class="card-title ">{{this.name}}</h5></span>
+				<span class="success">₹{{this.price}}</span>
+			</div>
+			<div class="col-sm-6 col-md-4 float-right">
+				<span class="float mx-auto d-block mt-4"><a href="/decItem/?id={{this.id}}" class="btn btn-primary mt-2 mr-2">-</a>{{this.quan}}<a href="/incItem/?id={{this.id}}" class="btn btn-primary mt-2 ml-2">+</a></span>
+			</div>
+		</div>
+    {{/each}}
+     <div class="row mt-4" >
+    	<div class="col"><span class="mx-auto d-flex justify-content-center">Total :-  ₹{{price}}  </span></div>
+  	</div>
+    <div class="row mt-4" >
+    	<div class="col"><span class="mx-auto d-flex justify-content-center"> <a href="/shop/checkout" class="btn btn-primary mx-auto">Checkout</a> </span></div>
+  	</div>
+  </div>
+  {{else}}
+  <div class="m-5 pb-5 mx-auto"><h5 class="card-title ">No items in shopping cart</h5></div>
+  {{/if}}
+</div>
