@@ -5,6 +5,8 @@ To get started with the project make sure you have node installed on your system
 
 1. First download all the files put it in one folder
 
+⭐ ⭐
+
 2. Now go to the project folder in command line and npm install.
 
 3. Configuration of routes is in the routes/index.js file where what to do for different URL's.
